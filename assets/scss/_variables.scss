@@ -1,0 +1,31 @@
+$gray: '#DEDEDE';
+$black: '#1A1A1A';
+$white: '#FFFFFF';
+
+@mixin gradient() {
+  background: linear-gradient(90deg, #1bae8a 0%, #29cc85 100%);
+}
+
+@mixin responsive-large {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin responsive-medium {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin responsive-small {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin responsive-x-small {
+  @media screen and (max-width: 576) {
+    @content;
+  }
+}
