@@ -1,0 +1,57 @@
+header {
+  border-bottom: 1px solid $gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0px;
+
+  & > a {
+    font-size: 2.4rem;
+    line-height: 2.64rem;
+    font-weight: 600;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      @include gradient();
+    }
+  }
+
+  nav ul {
+    display: flex;
+    gap: 48px;
+    font-weight: 500;
+
+    a.contact {
+      color: $white;
+      padding: 8px 16px;
+      @include radius-large();
+      @include gradient-hover();
+    }
+
+    a:not(.contact) {
+      position: relative;
+
+      &::before {
+        content: '';
+        transition: width 0.3s;
+        display: block;
+        width: 0px;
+        height: 9px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        @include gradient();
+        @include radius-small();
+      }
+
+      &:hover::before {
+        width: 30px;
+      }
+    }
+  }
+}

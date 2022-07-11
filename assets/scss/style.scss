@@ -1,1 +1,27 @@
 @import './variables', './reset';
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  line-height: 2rem;
+  font-family: 'Anek Latin', sans-serif;
+  background-color: $white;
+  color: $black;
+}
+
+a {
+  color: $black;
+}
+
+header,
+main,
+footer {
+  max-width: 972px;
+  margin: 0 auto;
+}
+
+@import './header';

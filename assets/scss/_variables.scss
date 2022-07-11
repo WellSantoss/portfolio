@@ -1,9 +1,35 @@
-$gray: '#DEDEDE';
-$black: '#1A1A1A';
-$white: '#FFFFFF';
+$gray: #dedede;
+$black: #1a1a1a;
+$white: #ffffff;
+$primary-1: #1bae8a;
+$primary-2: #29cc85;
 
 @mixin gradient() {
-  background: linear-gradient(90deg, #1bae8a 0%, #29cc85 100%);
+  background: linear-gradient(90deg, $primary-1 0%, $primary-2 100%);
+}
+
+@mixin gradient-hover() {
+  background: linear-gradient(
+    90deg,
+    $primary-1 0%,
+    $primary-2 50%,
+    $primary-1 100%
+  );
+  background-size: 200%;
+  background-position: left;
+  transition: background-position 0.3s;
+
+  &:hover {
+    background-position: right;
+  }
+}
+
+@mixin radius-large() {
+  border-radius: 4px;
+}
+
+@mixin radius-small() {
+  border-radius: 2px;
 }
 
 @mixin responsive-large {
