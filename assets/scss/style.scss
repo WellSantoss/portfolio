@@ -11,6 +11,7 @@ body {
   font-family: 'Anek Latin', sans-serif;
   background-color: $white;
   color: $black;
+  padding: 0px 16px;
 }
 
 a {
@@ -20,7 +21,7 @@ a {
 header,
 main,
 footer {
-  max-width: 972px;
+  max-width: 940px;
   margin: 0 auto;
 }
 

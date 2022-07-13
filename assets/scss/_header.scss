@@ -20,38 +20,78 @@ header {
     }
   }
 
-  nav ul {
-    display: flex;
-    gap: 48px;
-    font-weight: 500;
+  nav {
+    @include responsive-small() {
+      display: none;
 
-    a.contact {
-      color: $white;
-      padding: 8px 16px;
-      @include radius-large();
-      @include gradient-hover();
+      &.active {
+        @include gradient();
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
     }
 
-    a:not(.contact) {
-      position: relative;
+    ul {
+      display: flex;
+      gap: 48px;
+      font-weight: 500;
 
-      &::before {
-        content: '';
-        transition: width 0.3s;
-        display: block;
-        width: 0px;
-        height: 9px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
-        @include gradient();
-        @include radius-small();
+      @include responsive-small() {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
       }
 
-      &:hover::before {
-        width: 30px;
+      a.contact {
+        color: $white;
+        padding: 8px 16px;
+        @include radius-large();
+        @include gradient-hover();
       }
+
+      a {
+        position: relative;
+
+        @include responsive-small() {
+          color: $white;
+
+          &.contact {
+            background: none;
+          }
+        }
+
+        &::before {
+          content: '';
+          transition: width 0.3s;
+          display: block;
+          width: 0px;
+          height: 9px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          @include gradient();
+          @include radius-small();
+        }
+
+        &:hover::before {
+          width: 30px;
+        }
+      }
+    }
+  }
+
+  button.btn-menu {
+    display: none;
+
+    @include responsive-small() {
+      display: block;
+      z-index: 99;
     }
   }
 }

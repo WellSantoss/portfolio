@@ -148,6 +148,7 @@ body {
   font-family: "Anek Latin", sans-serif;
   background-color: #ffffff;
   color: #1a1a1a;
+  padding: 0px 16px;
 }
 
 a {
@@ -157,7 +158,7 @@ a {
 header,
 main,
 footer {
-  max-width: 972px;
+  max-width: 940px;
   margin: 0 auto;
 }
 
@@ -181,10 +182,32 @@ header > a::after {
   border-radius: 50%;
   background: linear-gradient(90deg, #1bae8a 0%, #29cc85 100%);
 }
+@media screen and (max-width: 768px) {
+  header nav {
+    display: none;
+  }
+  header nav.active {
+    background: linear-gradient(90deg, #1bae8a 0%, #29cc85 100%);
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
 header nav ul {
   display: flex;
   gap: 48px;
   font-weight: 500;
+}
+@media screen and (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
 }
 header nav ul a.contact {
   color: #ffffff;
@@ -198,10 +221,18 @@ header nav ul a.contact {
 header nav ul a.contact:hover {
   background-position: right;
 }
-header nav ul a:not(.contact) {
+header nav ul a {
   position: relative;
 }
-header nav ul a:not(.contact)::before {
+@media screen and (max-width: 768px) {
+  header nav ul a {
+    color: #ffffff;
+  }
+  header nav ul a.contact {
+    background: none;
+  }
+}
+header nav ul a::before {
   content: "";
   transition: width 0.3s;
   display: block;
@@ -214,6 +245,15 @@ header nav ul a:not(.contact)::before {
   background: linear-gradient(90deg, #1bae8a 0%, #29cc85 100%);
   border-radius: 2px;
 }
-header nav ul a:not(.contact):hover::before {
+header nav ul a:hover::before {
   width: 30px;
+}
+header button.btn-menu {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  header button.btn-menu {
+    display: block;
+    z-index: 99;
+  }
 }/*# sourceMappingURL=style.css.map */
