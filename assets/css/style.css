@@ -250,10 +250,33 @@ header nav ul a:hover::before {
 }
 header button.btn-menu {
   display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 25px;
+  height: 20px;
+  padding: 0;
+}
+header button.btn-menu span {
+  width: 100%;
+  background: #1a1a1a;
+  height: 3px;
+  transition: transform 0.3s;
+}
+header button.btn-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate3d(6px, 6px, 0px);
+}
+header button.btn-menu.active span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+header button.btn-menu.active span:nth-child(3) {
+  transform: rotate(45deg) translate3d(-6px, -6px, 0px);
 }
 @media screen and (max-width: 768px) {
   header button.btn-menu {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     z-index: 99;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,41 +1,48 @@
 export default function mobileMenu() {
   const btnMenu = document.querySelector('button.btn-menu');
+  const menu = document.querySelector('header nav');
+  const menuItems = menu.querySelectorAll('ul li');
+  const windowWidth = window.innerWidth;
+
+  menuItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      if (menu.classList.contains('active') && windowWidth <= 768) {
+        animElement(menu, 0, -windowWidth);
+        btnMenu.classList.remove('active');
+
+        setTimeout(() => {
+          menu.classList.remove('active');
+        }, 300);
+      }
+    });
+  });
 
   btnMenu.addEventListener('click', () => {
-    const menu = document.querySelector('header nav');
-    const windowWidth = window.innerWidth;
-
     if (menu.classList.contains('active')) {
-      menu.animate(
-        [
-          { transform: 'translateX(0px)' },
-          { transform: `translateX(-${windowWidth}px)` },
-        ],
-        {
-          duration: 300,
-          fill: 'forwards',
-          easing: 'ease-out',
-        }
-      );
+      animElement(menu, 0, -windowWidth);
+      btnMenu.classList.remove('active');
 
       setTimeout(() => {
         menu.classList.remove('active');
       }, 300);
     } else {
       menu.classList.add('active');
-      menu.animate(
-        [
-          { transform: `translateX(-${windowWidth}px)` },
-          { transform: 'translateX(0px)' },
-        ],
-        {
-          duration: 300,
-          fill: 'forwards',
-          easing: 'ease-out',
-        }
-      );
+      btnMenu.classList.add('active');
+      animElement(menu, -windowWidth, 0);
     }
   });
 }
 
-function animElement() {}
+function animElement(element, from, to) {
+  element.animate(
+    [
+      { transform: `translateX(${from}px)` },
+      { transform: `translateX(${to}px)` },
+    ],
+    {
+      duration: 300,
+      fill: 'forwards',
+      easing: 'ease-out',
+    }
+  );
+}
