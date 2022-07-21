@@ -1,0 +1,25 @@
+#hero {
+  padding: 128px 0px 0px;
+  border: none;
+
+  .container {
+    border-bottom: 1px solid $gray;
+    padding-bottom: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 64px;
+  }
+
+  p {
+    margin: 32px 0px 64px;
+    max-width: 380px;
+  }
+
+  a {
+    padding: 16px 32px;
+    color: $white;
+    @include gradient-hover();
+    @include radius-large();
+  }
+}
