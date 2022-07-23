@@ -6,6 +6,7 @@ $primary-2: #29cc85;
 
 @mixin gradient() {
   background: linear-gradient(90deg, $primary-1 0%, $primary-2 100%);
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
 }
 
 @mixin gradient-hover() {

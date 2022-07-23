@@ -8,6 +8,10 @@
   .info {
     max-width: 380px;
 
+    h1::before {
+      display: none;
+    }
+
     p {
       margin: 32px 0px 64px;
     }

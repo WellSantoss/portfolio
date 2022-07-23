@@ -1,0 +1,27 @@
+#services {
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .item {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      column-gap: 32px;
+
+      &::before {
+        grid-row: span 2;
+        content: '';
+        display: block;
+        width: 26px;
+        height: 26px;
+        @include radius-small();
+        @include gradient();
+      }
+
+      h2 {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
