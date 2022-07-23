@@ -9,6 +9,7 @@ $primary-2: #29cc85;
 }
 
 @mixin gradient-hover() {
+  display: inline-block;
   background: linear-gradient(
     90deg,
     $primary-1 0%,
@@ -53,7 +54,7 @@ $primary-2: #29cc85;
 }
 
 @mixin responsive-x-small {
-  @media screen and (max-width: 576) {
+  @media screen and (max-width: 576px) {
     @content;
   }
 }
