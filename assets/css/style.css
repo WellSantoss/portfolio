@@ -452,4 +452,54 @@ header button.btn-menu.active span:nth-child(3) {
   #hero .info {
     max-width: 540px;
   }
+}
+
+#projects .item {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 26px auto;
+  gap: 16px 32px;
+}
+#projects .item::before {
+  display: none;
+}
+#projects .item h2 {
+  margin-bottom: 0px;
+}
+#projects .item img {
+  width: 100%;
+  grid-row: span 2;
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
+}
+@media screen and (max-width: 992px) {
+  #projects .item {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  #projects .item h2 {
+    margin: 16px 0px 8px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #projects .item {
+    grid-template-columns: 220px 1fr;
+    display: grid;
+    gap: 16px 32px;
+  }
+  #projects .item h2 {
+    margin: 0px;
+  }
+}
+@media screen and (max-width: 576px) {
+  #projects .item {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  #projects .item h2 {
+    margin: 16px 0px 8px;
+  }
 }/*# sourceMappingURL=style.css.map */

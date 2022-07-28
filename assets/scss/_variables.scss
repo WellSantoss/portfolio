@@ -4,9 +4,13 @@ $white: #ffffff;
 $primary-1: #1bae8a;
 $primary-2: #29cc85;
 
+@mixin shadow() {
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
+}
+
 @mixin gradient() {
   background: linear-gradient(90deg, $primary-1 0%, $primary-2 100%);
-  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
+  @include shadow();
 }
 
 @mixin gradient-hover() {
@@ -20,7 +24,7 @@ $primary-2: #29cc85;
   background-size: 200%;
   background-position: left;
   transition: background-position 0.3s, filter 0.3s;
-  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
+  @include shadow();
 
   &:hover {
     filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.25));
