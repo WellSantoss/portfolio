@@ -21,6 +21,8 @@ header {
   }
 
   nav {
+    z-index: 5;
+
     @include responsive-small() {
       display: none;
 
@@ -37,6 +39,7 @@ header {
 
     ul {
       display: flex;
+      align-items: center;
       gap: 32px;
       font-weight: 500;
 

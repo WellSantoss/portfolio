@@ -166,10 +166,63 @@ section {
 section .info p {
   margin-top: 32px;
 }
+section .content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+section .item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
+}
+section .item::before {
+  grid-row: span 2;
+  content: "";
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #1bae8a 0%, #29cc85 100%);
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
+}
+@media screen and (max-width: 576px) {
+  section .item::before {
+    width: 22px;
+    height: 22px;
+  }
+}
+section .item h2 {
+  margin-bottom: 16px;
+}
 @media screen and (max-width: 768px) {
   section {
     grid-template-columns: 1fr;
   }
+}
+section#tech .content {
+  gap: 16px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media screen and (max-width: 992px) {
+  section#tech .content {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 768px) {
+  section#tech .content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 576px) {
+  section#tech .content {
+    grid-template-columns: 1fr;
+  }
+}
+section#tech .content h2 {
+  margin-bottom: 0px;
 }
 
 a {
@@ -239,6 +292,9 @@ header > a::after {
   background: linear-gradient(90deg, #1bae8a 0%, #29cc85 100%);
   filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
 }
+header nav {
+  z-index: 5;
+}
 @media screen and (max-width: 768px) {
   header nav {
     display: none;
@@ -256,6 +312,7 @@ header > a::after {
 }
 header nav ul {
   display: flex;
+  align-items: center;
   gap: 32px;
   font-weight: 500;
 }
@@ -389,35 +446,4 @@ header button.btn-menu.active span:nth-child(3) {
   #hero .info {
     max-width: 540px;
   }
-}
-
-#services .content {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-#services .content .item {
-  display: grid;
-  grid-template-columns: 20px 1fr;
-  -moz-column-gap: 32px;
-       column-gap: 32px;
-}
-#services .content .item::before {
-  grid-row: span 2;
-  content: "";
-  display: block;
-  width: 26px;
-  height: 26px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, #1bae8a 0%, #29cc85 100%);
-  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
-}
-@media screen and (max-width: 576px) {
-  #services .content .item::before {
-    width: 22px;
-    height: 22px;
-  }
-}
-#services .content .item h2 {
-  margin-bottom: 16px;
 }/*# sourceMappingURL=style.css.map */
