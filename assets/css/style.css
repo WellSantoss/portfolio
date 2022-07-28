@@ -196,6 +196,11 @@ section .item::before {
 section .item h2 {
   margin-bottom: 16px;
 }
+@media screen and (max-width: 992px) {
+  section {
+    grid-template-columns: 300px 1fr;
+  }
+}
 @media screen and (max-width: 768px) {
   section {
     grid-template-columns: 1fr;
@@ -351,6 +356,7 @@ header nav ul a {
   }
   header nav ul a.contact {
     background: none;
+    filter: none;
   }
 }
 header nav ul a::before {
@@ -399,7 +405,7 @@ header button.btn-menu.active span:nth-child(3) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    z-index: 99;
+    z-index: 9;
   }
 }
 

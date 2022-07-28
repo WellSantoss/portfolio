@@ -69,6 +69,7 @@ header {
 
           &.contact {
             background: none;
+            filter: none;
           }
         }
 
@@ -127,7 +128,7 @@ header {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      z-index: 99;
+      z-index: 9;
     }
   }
 }

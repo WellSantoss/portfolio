@@ -61,6 +61,10 @@ section {
     }
   }
 
+  @include responsive-medium() {
+    grid-template-columns: 300px 1fr;
+  }
+
   @include responsive-small() {
     grid-template-columns: 1fr;
   }
@@ -133,4 +137,4 @@ h2 {
   }
 }
 
-@import './header', './hero', './services', './skills';
+@import './header', './hero';
