@@ -166,6 +166,11 @@ section {
 section .info p {
   margin-top: 32px;
 }
+@media screen and (max-width: 768px) {
+  section {
+    grid-template-columns: 1fr;
+  }
+}
 
 a {
   color: #1a1a1a;
@@ -195,12 +200,22 @@ h1::before {
     font-size: 3.2rem;
     line-height: 3.52rem;
   }
+  h1::before {
+    width: 55px;
+    height: 14px;
+  }
 }
 
 h2 {
   font-size: 2.4rem;
   line-height: 2.64rem;
   font-weight: 600;
+}
+@media screen and (max-width: 576px) {
+  h2 {
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
 }
 
 header {
@@ -266,6 +281,9 @@ header nav ul a.contact {
 header nav ul a.contact:hover {
   filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.25));
   background-position: right;
+}
+header nav ul a.contact::before {
+  display: none;
 }
 header nav ul a {
   position: relative;
@@ -335,6 +353,11 @@ header button.btn-menu.active span:nth-child(3) {
   align-items: center;
   gap: 64px;
 }
+@media screen and (max-width: 576px) {
+  #hero {
+    padding-top: 64px;
+  }
+}
 #hero .info {
   max-width: 380px;
 }
@@ -388,6 +411,12 @@ header button.btn-menu.active span:nth-child(3) {
   border-radius: 2px;
   background: linear-gradient(90deg, #1bae8a 0%, #29cc85 100%);
   filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
+}
+@media screen and (max-width: 576px) {
+  #services .content .item::before {
+    width: 22px;
+    height: 22px;
+  }
 }
 #services .content .item h2 {
   margin-bottom: 16px;

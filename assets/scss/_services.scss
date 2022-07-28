@@ -17,6 +17,11 @@
         height: 26px;
         @include radius-small();
         @include gradient();
+
+        @include responsive-x-small() {
+          width: 22px;
+          height: 22px;
+        }
       }
 
       h2 {

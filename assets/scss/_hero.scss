@@ -5,6 +5,10 @@
   align-items: center;
   gap: 64px;
 
+  @include responsive-x-small() {
+    padding-top: 64px;
+  }
+
   .info {
     max-width: 380px;
 
