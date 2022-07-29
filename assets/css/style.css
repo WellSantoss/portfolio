@@ -142,12 +142,18 @@ html {
   font-size: 62.5%;
 }
 
-body {
+body,
+input,
+textarea,
+button {
   font-size: 1.8rem;
   line-height: 2rem;
   font-family: "Anek Latin", sans-serif;
-  background-color: #ffffff;
   color: #1a1a1a;
+}
+
+body {
+  background-color: #ffffff;
   padding: 0px 32px;
 }
 
@@ -204,6 +210,11 @@ section .item h2 {
 @media screen and (max-width: 768px) {
   section {
     grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 576px) {
+  section {
+    padding: 32px 0px;
   }
 }
 section#tech .content {
@@ -502,4 +513,65 @@ header button.btn-menu.active span:nth-child(3) {
   #projects .item h2 {
     margin: 16px 0px 8px;
   }
+}
+
+#contact .info > div {
+  margin-top: 32px;
+}
+#contact .info .socials {
+  margin-top: 64px;
+  display: flex;
+  gap: 32px;
+}
+#contact .info .socials img {
+  width: 32px;
+}
+#contact .info p {
+  margin: 0;
+}
+#contact .content {
+  gap: 0px;
+}
+#contact .content label {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+#contact .content textarea {
+  resize: vertical;
+  height: 80px;
+}
+#contact .content input,
+#contact .content textarea {
+  padding: 4px 8px;
+  margin-bottom: 16px;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+#contact .content input:focus,
+#contact .content textarea:focus {
+  outline: none;
+  border: 1px solid #1bae8a;
+  box-shadow: 0px 0px 0px 1px #1bae8a;
+}
+#contact .content button {
+  display: inline-block;
+  background: linear-gradient(90deg, #1bae8a 0%, #29cc85 50%, #1bae8a 100%);
+  background-size: 200%;
+  background-position: left;
+  transition: background-position 0.3s, filter 0.3s;
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  padding: 16px 32px;
+  color: #ffffff;
+  margin: 32px auto 0px;
+  display: block;
+}
+#contact .content button:hover {
+  filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.25));
+  background-position: right;
 }/*# sourceMappingURL=style.css.map */

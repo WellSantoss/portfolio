@@ -5,12 +5,18 @@ html {
   font-size: 62.5%;
 }
 
-body {
+body,
+input,
+textarea,
+button {
   font-size: 1.8rem;
   line-height: 2rem;
   font-family: 'Anek Latin', sans-serif;
-  background-color: $white;
   color: $black;
+}
+
+body {
+  background-color: $white;
   padding: 0px 32px;
 }
 
@@ -67,6 +73,10 @@ section {
 
   @include responsive-small() {
     grid-template-columns: 1fr;
+  }
+
+  @include responsive-x-small() {
+    padding: 32px 0px;
   }
 
   &#tech .content {
@@ -137,4 +147,4 @@ h2 {
   }
 }
 
-@import './header', './hero', './projects';
+@import './header', './hero', './projects', 'contact';
