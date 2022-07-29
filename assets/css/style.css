@@ -287,6 +287,10 @@ h2 {
   }
 }
 
+footer {
+  padding: 16px 0px;
+}
+
 header {
   border-bottom: 1px solid #dedede;
   display: flex;
