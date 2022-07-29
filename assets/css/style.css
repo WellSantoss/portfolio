@@ -290,6 +290,9 @@ h2 {
 footer {
   padding: 16px 0px;
 }
+footer p {
+  text-align: center;
+}
 
 header {
   border-bottom: 1px solid #dedede;

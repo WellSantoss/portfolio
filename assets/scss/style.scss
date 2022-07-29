@@ -149,6 +149,10 @@ h2 {
 
 footer {
   padding: 16px 0px;
+
+  p {
+    text-align: center;
+  }
 }
 
 @import './header', './hero', './projects', 'contact';
