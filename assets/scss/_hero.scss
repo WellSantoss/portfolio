@@ -22,7 +22,7 @@
 
     a {
       padding: 16px 32px;
-      color: $white;
+      color: var(--white);
       @include gradient-hover();
       @include radius-large();
     }

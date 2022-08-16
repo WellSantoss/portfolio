@@ -1,3 +1,19 @@
+:root {
+  --gray: #dedede;
+  --black: #1a1a1a;
+  --white: #ffffff;
+  --primary-1: #1bae8a;
+  --primary-2: #29cc85;
+}
+
+.dark:root {
+  --gray: #3c3c3c;
+  --white: #1a1a1a;
+  --black: #f1f1f1;
+  --primary-1: #14aa91;
+  --primary-2: #22c386;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -149,11 +165,11 @@ button {
   font-size: 1.8rem;
   line-height: 2rem;
   font-family: "Anek Latin", sans-serif;
-  color: #1a1a1a;
+  color: var(--black);
 }
 
 body {
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 0px 32px;
 }
 
@@ -163,7 +179,7 @@ body {
 }
 
 section {
-  border-bottom: 1px solid #dedede;
+  border-bottom: 1px solid var(--gray);
   padding: 64px 0px;
   display: grid;
   grid-template-columns: 380px 1fr;
@@ -190,7 +206,7 @@ section .item::before {
   width: 26px;
   height: 26px;
   border-radius: 2px;
-  background: linear-gradient(90deg, #1bae8a 0%, #29cc85 100%);
+  background: linear-gradient(90deg, var(--primary-1) 0%, var(--primary-2) 100%);
   filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
 }
 @media screen and (max-width: 576px) {
@@ -242,7 +258,18 @@ section#tech .content h2 {
 }
 
 a {
-  color: #1a1a1a;
+  color: var(--black);
+}
+
+.dark a.contact,
+.dark #hero .info a,
+.dark #contact .content button {
+  color: var(--black) !important;
+}
+
+.dark input,
+.dark textarea {
+  background: var(--gray);
 }
 
 h1 {
@@ -261,7 +288,7 @@ h1::before {
   width: 80px;
   height: 20px;
   border-radius: 2px;
-  background: linear-gradient(90deg, #1bae8a 0%, #29cc85 100%);
+  background: linear-gradient(90deg, var(--primary-1) 0%, var(--primary-2) 100%);
   filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
 }
 @media screen and (max-width: 576px) {
@@ -295,7 +322,7 @@ footer p {
 }
 
 header {
-  border-bottom: 1px solid #dedede;
+  border-bottom: 1px solid var(--gray);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -312,7 +339,7 @@ header > a::after {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: linear-gradient(90deg, #1bae8a 0%, #29cc85 100%);
+  background: linear-gradient(90deg, var(--primary-1) 0%, var(--primary-2) 100%);
   filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
 }
 header nav {
@@ -323,7 +350,7 @@ header nav {
     display: none;
   }
   header nav.active {
-    background: linear-gradient(90deg, #1bae8a 0%, #29cc85 100%);
+    background: linear-gradient(90deg, var(--primary-1) 0%, var(--primary-2) 100%);
     filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
     position: absolute;
     display: block;
@@ -348,11 +375,11 @@ header nav ul {
   }
 }
 header nav ul a.contact {
-  color: #ffffff;
+  color: var(--white);
   padding: 8px 16px;
   border-radius: 4px;
   display: inline-block;
-  background: linear-gradient(90deg, #1bae8a 0%, #29cc85 50%, #1bae8a 100%);
+  background: linear-gradient(90deg, var(--primary-1) 0%, var(--primary-2) 50%, var(--primary-1) 100%);
   background-size: 200%;
   background-position: left;
   transition: background-position 0.3s, filter 0.3s;
@@ -370,7 +397,7 @@ header nav ul a {
 }
 @media screen and (max-width: 768px) {
   header nav ul a {
-    color: #ffffff;
+    color: var(--white);
   }
   header nav ul a.contact {
     background: none;
@@ -387,7 +414,7 @@ header nav ul a::before {
   bottom: 0;
   left: 0;
   z-index: -1;
-  background: linear-gradient(90deg, #1bae8a 0%, #29cc85 100%);
+  background: linear-gradient(90deg, var(--primary-1) 0%, var(--primary-2) 100%);
   filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
   border-radius: 2px;
 }
@@ -405,7 +432,7 @@ header button.btn-menu {
 }
 header button.btn-menu span {
   width: 100%;
-  background: #1a1a1a;
+  background: var(--black);
   height: 3px;
   transition: transform 0.3s;
 }
@@ -450,9 +477,9 @@ header button.btn-menu.active span:nth-child(3) {
 }
 #hero .info a {
   padding: 16px 32px;
-  color: #ffffff;
+  color: var(--white);
   display: inline-block;
-  background: linear-gradient(90deg, #1bae8a 0%, #29cc85 50%, #1bae8a 100%);
+  background: linear-gradient(90deg, var(--primary-1) 0%, var(--primary-2) 50%, var(--primary-1) 100%);
   background-size: 200%;
   background-position: left;
   transition: background-position 0.3s, filter 0.3s;
@@ -553,19 +580,19 @@ header button.btn-menu.active span:nth-child(3) {
 #contact .content textarea {
   padding: 4px 8px;
   margin-bottom: 16px;
-  border: 1px solid #dedede;
+  border: 1px solid var(--gray);
   border-radius: 4px;
   transition: border 0.3s, box-shadow 0.3s;
 }
 #contact .content input:focus,
 #contact .content textarea:focus {
   outline: none;
-  border: 1px solid #1bae8a;
-  box-shadow: 0px 0px 0px 1px #1bae8a;
+  border: 1px solid var(--primary-1);
+  box-shadow: 0px 0px 0px 1px var(--primary-1);
 }
 #contact .content button {
   display: inline-block;
-  background: linear-gradient(90deg, #1bae8a 0%, #29cc85 50%, #1bae8a 100%);
+  background: linear-gradient(90deg, var(--primary-1) 0%, var(--primary-2) 50%, var(--primary-1) 100%);
   background-size: 200%;
   background-position: left;
   transition: background-position 0.3s, filter 0.3s;
@@ -574,7 +601,7 @@ header button.btn-menu.active span:nth-child(3) {
   cursor: pointer;
   border: none;
   padding: 16px 32px;
-  color: #ffffff;
+  color: var(--white);
   margin: 32px auto 0px;
   display: block;
 }

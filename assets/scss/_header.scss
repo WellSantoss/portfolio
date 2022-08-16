@@ -1,5 +1,5 @@
 header {
-  border-bottom: 1px solid $gray;
+  border-bottom: 1px solid var(--gray);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,7 +51,7 @@ header {
       }
 
       a.contact {
-        color: $white;
+        color: var(--white);
         padding: 8px 16px;
         @include radius-large();
         @include gradient-hover();
@@ -65,7 +65,7 @@ header {
         position: relative;
 
         @include responsive-small() {
-          color: $white;
+          color: var(--white);
 
           &.contact {
             background: none;
@@ -105,7 +105,7 @@ header {
 
     span {
       width: 100%;
-      background: $black;
+      background: var(--black);
       height: 3px;
       transition: transform 0.3s;
     }

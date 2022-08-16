@@ -1,15 +1,29 @@
-$gray: #dedede;
-$black: #1a1a1a;
-$white: #ffffff;
-$primary-1: #1bae8a;
-$primary-2: #29cc85;
+:root {
+  --gray: #dedede;
+  --black: #1a1a1a;
+  --white: #ffffff;
+  --primary-1: #1bae8a;
+  --primary-2: #29cc85;
+}
+
+.dark:root {
+  --gray: #3c3c3c;
+  --white: #1a1a1a;
+  --black: #f1f1f1;
+  --primary-1: #14aa91;
+  --primary-2: #22c386;
+}
 
 @mixin shadow() {
   filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
 }
 
 @mixin gradient() {
-  background: linear-gradient(90deg, $primary-1 0%, $primary-2 100%);
+  background: linear-gradient(
+    90deg,
+    var(--primary-1) 0%,
+    var(--primary-2) 100%
+  );
   @include shadow();
 }
 
@@ -17,9 +31,9 @@ $primary-2: #29cc85;
   display: inline-block;
   background: linear-gradient(
     90deg,
-    $primary-1 0%,
-    $primary-2 50%,
-    $primary-1 100%
+    var(--primary-1) 0%,
+    var(--primary-2) 50%,
+    var(--primary-1) 100%
   );
   background-size: 200%;
   background-position: left;

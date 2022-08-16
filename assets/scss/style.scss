@@ -12,11 +12,11 @@ button {
   font-size: 1.8rem;
   line-height: 2rem;
   font-family: 'Anek Latin', sans-serif;
-  color: $black;
+  color: var(--black);
 }
 
 body {
-  background-color: $white;
+  background-color: var(--white);
   padding: 0px 32px;
 }
 
@@ -26,7 +26,7 @@ body {
 }
 
 section {
-  border-bottom: 1px solid $gray;
+  border-bottom: 1px solid var(--gray);
   padding: 64px 0px;
   display: grid;
   grid-template-columns: 380px 1fr;
@@ -103,7 +103,18 @@ section {
 }
 
 a {
-  color: $black;
+  color: var(--black);
+}
+
+.dark a.contact,
+.dark #hero .info a,
+.dark #contact .content button {
+  color: var(--black) !important;
+}
+
+.dark input,
+.dark textarea {
+  background: var(--gray);
 }
 
 h1 {
