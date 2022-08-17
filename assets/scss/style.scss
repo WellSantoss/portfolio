@@ -18,6 +18,11 @@ button {
 body {
   background-color: var(--white);
   padding: 0px 32px;
+
+  &.overflow {
+    overflow-y: scroll;
+    position: fixed;
+  }
 }
 
 .container {

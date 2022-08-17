@@ -24,11 +24,13 @@ export default function mobileMenu() {
     if (menu.classList.contains('active')) {
       animElement(menu, 0, -windowWidth);
       btnMenu.classList.remove('active');
+      document.body.classList.remove('overflow');
 
       setTimeout(() => {
         menu.classList.remove('active');
       }, 300);
     } else {
+      document.body.classList.add('overflow');
       menu.classList.add('active');
       btnMenu.classList.add('active');
       animElement(menu, -windowWidth, 0);

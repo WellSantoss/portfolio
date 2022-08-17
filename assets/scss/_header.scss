@@ -70,6 +70,7 @@ header {
 
   nav.mobile {
     display: none;
+    position: fixed;
 
     @media screen and (min-width: 769px) {
       display: none !important;
@@ -79,7 +80,6 @@ header {
       z-index: 5;
       display: block;
       @include gradient();
-      position: absolute;
       left: 0;
       top: 0;
       right: 0;
@@ -118,6 +118,9 @@ header {
     }
 
     &.active {
+      position: fixed;
+      right: 32px;
+
       span:nth-child(1) {
         transform: rotate(45deg) translate3d(6px, 6px, 0px);
       }

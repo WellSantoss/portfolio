@@ -172,6 +172,10 @@ body {
   background-color: var(--white);
   padding: 0px 32px;
 }
+body.overflow {
+  overflow-y: scroll;
+  position: fixed;
+}
 
 .container {
   max-width: 940px;
@@ -396,6 +400,7 @@ header nav.menu ul a:hover::before {
 }
 header nav.mobile {
   display: none;
+  position: fixed;
 }
 @media screen and (min-width: 769px) {
   header nav.mobile {
@@ -407,7 +412,6 @@ header nav.mobile.active {
   display: block;
   background: linear-gradient(90deg, var(--primary-1) 0%, var(--primary-2) 100%);
   filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
-  position: absolute;
   left: 0;
   top: 0;
   right: 0;
@@ -439,6 +443,10 @@ header button.btn-menu span {
   background: var(--black);
   height: 3px;
   transition: transform 0.3s;
+}
+header button.btn-menu.active {
+  position: fixed;
+  right: 32px;
 }
 header button.btn-menu.active span:nth-child(1) {
   transform: rotate(45deg) translate3d(6px, 6px, 0px);
