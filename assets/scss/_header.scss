@@ -20,21 +20,11 @@ header {
     }
   }
 
-  nav {
+  nav.menu {
     z-index: 5;
 
     @include responsive-small() {
       display: none;
-
-      &.active {
-        @include gradient();
-        position: absolute;
-        display: block;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-      }
     }
 
     ul {
@@ -42,13 +32,6 @@ header {
       align-items: center;
       gap: 32px;
       font-weight: 500;
-
-      @include responsive-small() {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-      }
 
       a.contact {
         color: var(--white);
@@ -63,15 +46,6 @@ header {
 
       a {
         position: relative;
-
-        @include responsive-small() {
-          color: var(--white);
-
-          &.contact {
-            background: none;
-            filter: none;
-          }
-        }
 
         &::before {
           content: '';
@@ -90,6 +64,39 @@ header {
         &:hover::before {
           width: 30px;
         }
+      }
+    }
+  }
+
+  nav.mobile {
+    display: none;
+
+    @media screen and (min-width: 769px) {
+      display: none !important;
+    }
+
+    &.active {
+      z-index: 5;
+      display: block;
+      @include gradient();
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      font-weight: 500;
+      height: 100%;
+
+      a {
+        color: var(--white);
       }
     }
   }
