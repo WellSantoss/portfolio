@@ -1,5 +1,6 @@
 :root {
   --gray: #dedede;
+  --gray-dark: #1a1a1a;
   --black: #1a1a1a;
   --white: #ffffff;
   --primary-1: #1bae8a;
@@ -8,6 +9,7 @@
 
 .dark:root {
   --gray: #3c3c3c;
+  --gray-dark: #3c3c3c;
   --white: #1a1a1a;
   --black: #f1f1f1;
   --primary-1: #14aa91;
@@ -402,11 +404,6 @@ header nav.mobile {
   display: none;
   position: fixed;
 }
-@media screen and (min-width: 769px) {
-  header nav.mobile {
-    display: none !important;
-  }
-}
 header nav.mobile.active {
   z-index: 5;
   display: block;
@@ -464,6 +461,45 @@ header button.btn-menu.active span:nth-child(3) {
     justify-content: space-between;
     z-index: 9;
   }
+}
+
+nav #dark-switch .checkbox {
+  opacity: 0;
+  position: absolute;
+}
+nav #dark-switch .label {
+  box-sizing: border-box;
+  background-color: var(--gray-dark);
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px;
+  position: relative;
+  height: 26px;
+  width: 45px;
+}
+nav #dark-switch .label img {
+  width: 16px;
+}
+nav #dark-switch .label .ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: 18px;
+  width: 18px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+nav #dark-switch .checkbox:checked + .label .ball {
+  transform: translateX(20px);
+}
+
+.dark nav.mobile a {
+  color: var(--black);
 }
 
 #hero {
@@ -620,4 +656,14 @@ header button.btn-menu.active span:nth-child(3) {
 #contact .content button:hover {
   filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.25));
   background-position: right;
+}
+
+@media screen and (min-width: 769px) {
+  nav.mobile {
+    display: none !important;
+  }
+  body {
+    overflow-y: auto !important;
+    position: static !important;
+  }
 }/*# sourceMappingURL=style.css.map */

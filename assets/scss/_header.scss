@@ -72,10 +72,6 @@ header {
     display: none;
     position: fixed;
 
-    @media screen and (min-width: 769px) {
-      display: none !important;
-    }
-
     &.active {
       z-index: 5;
       display: block;
@@ -141,4 +137,49 @@ header {
       z-index: 9;
     }
   }
+}
+
+nav #dark-switch {
+  .checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+
+  .label {
+    box-sizing: border-box;
+    background-color: var(--gray-dark);
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px;
+    position: relative;
+    height: 26px;
+    width: 45px;
+
+    img {
+      width: 16px;
+    }
+
+    .ball {
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      height: 18px;
+      width: 18px;
+      transform: translateX(0px);
+      transition: transform 0.2s linear;
+    }
+  }
+
+  .checkbox:checked + .label .ball {
+    transform: translateX(20px);
+  }
+}
+
+.dark nav.mobile a {
+  color: var(--black);
 }

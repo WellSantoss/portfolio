@@ -172,3 +172,14 @@ footer {
 }
 
 @import './header', './hero', './projects', 'contact';
+
+@media screen and (min-width: 769px) {
+  nav.mobile {
+    display: none !important;
+  }
+
+  body {
+    overflow-y: auto !important;
+    position: static !important;
+  }
+}
