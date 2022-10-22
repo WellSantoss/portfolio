@@ -22,10 +22,7 @@ header {
 
   nav.menu {
     z-index: 5;
-
-    @include responsive-small() {
-      display: none;
-    }
+    transition: 0.3s;
 
     ul {
       display: flex;
@@ -66,33 +63,38 @@ header {
         }
       }
     }
-  }
 
-  nav.mobile {
-    display: none;
-    position: fixed;
-
-    &.active {
-      z-index: 5;
-      display: block;
+    @include responsive-small() {
       @include gradient();
-      left: 0;
-      top: 0;
-      right: 0;
+      position: fixed;
       bottom: 0;
-    }
+      top: 0;
+      left: -100%;
+      right: 100%;
 
-    ul {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 32px;
-      font-weight: 500;
-      height: 100%;
+      &.active {
+        left: 0;
+        right: 0;
+      }
 
-      a {
-        color: var(--white);
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        font-weight: 500;
+        height: 100%;
+
+        a {
+          color: var(--white);
+        }
+
+        a.contact {
+          background: none;
+          box-shadow: none;
+          padding: 0px;
+        }
       }
     }
   }
