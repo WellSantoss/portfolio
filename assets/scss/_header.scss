@@ -1,22 +1,43 @@
 header {
-  border-bottom: 1px solid var(--gray);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 0px;
+  & > div {
+    padding: 16px 0px;
+    border-bottom: 1px solid var(--gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  & > a {
-    font-size: 2.4rem;
-    line-height: 2.64rem;
-    font-weight: 600;
+    & > a {
+      font-size: 2.4rem;
+      line-height: 2.64rem;
+      font-weight: 600;
 
-    &::after {
-      content: '';
-      display: inline-block;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      @include gradient();
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        @include gradient();
+      }
+    }
+  }
+
+  &.scroll {
+    background-color: var(--white);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    left: 0;
+    max-width: none;
+    @include shadow();
+    animation: toBottom 0.3s forwards;
+
+    & > div {
+      padding: 16px 32px;
+      max-width: 1004px;
+      margin: 0 auto;
+      border: none;
     }
   }
 
@@ -192,4 +213,13 @@ nav #dark-switch {
 
 .dark nav.mobile a {
   color: var(--black);
+}
+
+@keyframes toBottom {
+  from {
+    transform: translate3d(0, -69px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }

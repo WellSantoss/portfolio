@@ -5,6 +5,10 @@
   align-items: center;
   gap: 64px;
 
+  &.scroll {
+    margin-top: 69px;
+  }
+
   @include responsive-x-small() {
     padding-top: 64px;
   }
