@@ -12,6 +12,14 @@
       img {
         width: 32px;
       }
+
+      a {
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
     }
 
     p {
