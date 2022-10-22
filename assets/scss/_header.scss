@@ -88,12 +88,20 @@ header {
 
         a {
           color: var(--white);
+
+          &::before {
+            display: none;
+          }
         }
 
         a.contact {
           background: none;
           box-shadow: none;
           padding: 0px;
+
+          &:hover {
+            transform: scale(1);
+          }
         }
       }
     }

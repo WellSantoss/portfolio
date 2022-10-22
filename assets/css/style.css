@@ -421,10 +421,16 @@ header nav.menu ul a:hover::before {
   header nav.menu ul a {
     color: var(--white);
   }
+  header nav.menu ul a::before {
+    display: none;
+  }
   header nav.menu ul a.contact {
     background: none;
     box-shadow: none;
     padding: 0px;
+  }
+  header nav.menu ul a.contact:hover {
+    transform: scale(1);
   }
 }
 header button.btn-menu {
